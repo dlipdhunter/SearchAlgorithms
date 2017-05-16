@@ -14,6 +14,11 @@
         function binary_search(min, max, elem){
             console.log("Run : " + (++oThis.counter) + " with min: " + min + " and max: " + max);
             
+            if(min > max) {
+                console.log("Item not found.");
+                return -1;
+            }
+
             var cur_index = Math.floor((min + max ) / 2);
             
             if(oThis.elements[cur_index] == elem){
@@ -34,6 +39,6 @@
 
     var orderedNumbers = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53];
     var bs = new BinarySearch(orderedNumbers);
-    console.log(bs.findElement(41));
+    console.log(bs.findElement(42));
     console.log(bs.findElement(23));
 })();
